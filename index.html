@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" type="module"></script>
+  <title>Minesweeper</title>
+</head>
+<body>
+  <h3 class="title">Minesweeper</h3>
+  <div class="subtext">
+    Mines Left: <span data-mine-count></span>
+  </div>
+  <form>
+    <label for="board_size" style="font-size: 1.5rem;">Size of Board</label>
+    <input type="number" name="board_size" id="board_size">
+  </form>
+  <div class="board"></div>
+  <p type="button" id="togglee">Reset</p> 
+</body>
+</html>
