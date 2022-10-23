@@ -10,6 +10,11 @@ import {
 } from './minesweeper.js'
 
 let BOARD_SIZE = parseInt(window.name, 10)
+
+if (window.name === ''){
+    BOARD_SIZE = 10
+} 
+
 const NUMBER_OF_MINES = Math.floor((BOARD_SIZE * BOARD_SIZE) / 7)
 
 let board = createBoard(BOARD_SIZE, NUMBER_OF_MINES)
