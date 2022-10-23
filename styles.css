@@ -1,11 +1,12 @@
-* {
+  * {
     box-sizing: border-box;
   }
+
+  /*Elements*/
   
   body {
     margin: 0;
-    /*background-color: #333;*/
-    background-color: #444;/*#480058 #585858*/
+    background-color: #444;
     display: flex;
     align-items: center;
     font-size: min(5vw, 3rem);
@@ -14,7 +15,23 @@
     font-family: 'Silkscreen', cursive;
     text-align: center;
     vertical-align: middle;
+    height: 100vh;
   }
+
+  input[type="number"] {
+    width: min(5vw, 50px);
+    height: min(2.4vw, 30px);
+    font-size: min(1.5vw, 20px);
+    font-family: 'Silkscreen', cursive;
+    background-color: #BBB;
+    border: 0.2vw outset #BBB;
+  }
+
+  div {
+    font-size: min(2.5vw, 3rem);
+  }
+
+  /*Classes*/
   
   .title {
     margin: 20px;
@@ -46,21 +63,23 @@
     user-select: none;
   }
 
+  /*IDs*/
+
   #input_text {
     font-size: min(2.5vw, 1.5rem);
   }
 
-  div {
-    font-size: min(2.5vw, 3rem);
-  }
+  /*Restart Button*/
 
   #togglee {
     background-color: #777;
-    border: 0.6vw outset #444;
+    border: 0.6vw outset #BBB;
     padding: 0px 0.6vw;
     font-size: min(2.5vw, 3rem);
     cursor: pointer;
   }
+
+  /*Different Tile Statuses*/
   
   .board > [data-status="hidden"] {
     background-color: #BBB;
@@ -69,6 +88,7 @@
   
   .board > [data-status="mine"] {
     background-color: red;
+    border: 0.3vw outset red;
   }
   
   .board > [data-status="number"] {
@@ -77,5 +97,39 @@
   
   .board > [data-status="marked"] {
     background-color: yellow;
-    /*background-image: url('images/flag.png');*/
+    border: 0.3vw outset yellow;
+  }
+
+  /*Cellphone Responsiveness*/
+
+  @media screen and (max-width: 1200px) {
+
+    body {
+      justify-content: center;
+    }
+
+    div {
+      font-size: min(5vw, 4rem);
+    }
+
+    .board {
+      grid-template-columns: repeat(var(--size), 6vw);
+      grid-template-rows: repeat(var(--size), 6vw);
+    }
+
+    .board > * {
+      width: 5.6vw;
+      height: 5.6vw;
+      border: 0.54vw outset #BBB;
+    }
+
+    .board > [data-status="mine"] {
+      background-color: red;
+      border: 0.54vw outset red;
+    }
+
+    .board > [data-status="marked"] {
+      background-color: yellow;
+      border: 0.54vw outset yellow;
+    }
   }
