@@ -8,7 +8,6 @@
     margin: 0;
     background-color: #444;
     display: flex;
-    align-items: center;
     font-size: min(5vw, 3rem);
     flex-direction: column;
     color: white;
@@ -16,6 +15,8 @@
     text-align: center;
     vertical-align: middle;
     height: 100vh;
+    align-items: center;
+    /*justify-content: center;*/
   }
 
   input[type="number"] {
@@ -50,6 +51,8 @@
     grid-template-rows: repeat(var(--size), 3.1vw);
     gap: 0.1vw;
     background-color: #777;
+    align-items: center;
+    justify-items: center;
   }
   
   .board > * {
@@ -102,34 +105,50 @@
 
   /*Cellphone Responsiveness*/
 
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: 1197px) {
 
-    body {
-      justify-content: center;
+    body, #togglee {
+      justify-items: center;
+      font-size: min(8vw, 3.5rem);
     }
 
     div {
-      font-size: min(5vw, 4rem);
+      font-size: var(--fontSize);
     }
 
-    .board {
-      grid-template-columns: repeat(var(--size), 6vw);
-      grid-template-rows: repeat(var(--size), 6vw);
+    /*.board {
+      grid-template-columns: repeat(var(--size), var(--boardSize));
+      grid-template-rows: repeat(var(--size), var(--boardSize));
     }
 
     .board > * {
-      width: 5.6vw;
-      height: 5.6vw;
+      width: var(--tileSize);
+      height: var(--tileSize);
       border: 0.54vw outset #BBB;
+    }*/
+
+    .subtext, #input_text {
+      font-size: min(4vw, 1.8rem);
+    }
+
+    .board {
+      grid-template-columns: repeat(var(--size), var(--boardSize));
+      grid-template-rows: repeat(var(--size), var(--boardSize));
+    }
+
+    .board > * {
+      width: var(--tileSize);
+      height: var(--tileSize);
+      border: var(--borderSize) outset #BBB; /*0.54vw*/
     }
 
     .board > [data-status="mine"] {
       background-color: red;
-      border: 0.54vw outset red;
+      border: var(--borderSize) outset red;
     }
 
     .board > [data-status="marked"] {
       background-color: yellow;
-      border: 0.54vw outset yellow;
+      border: var(--borderSize) outset yellow;
     }
   }

@@ -42,7 +42,26 @@ board.forEach(row => {
         })
     })
 })
+
+//-------WIP-------//
+const sizeNeeded = sizeCalculation() 
+
+function sizeCalculation() {
+    if (BOARD_SIZE > 3) {
+        return 84/BOARD_SIZE + "vw"
+    }
+    else {
+        return 22 + "vw"
+    }
+}
+//-----------------//
+
 boardElement.style.setProperty('--size', BOARD_SIZE)
+boardElement.style.setProperty('--tileSize', 78.4/BOARD_SIZE + "vw")
+boardElement.style.setProperty('--boardSize', 84/BOARD_SIZE + "vw")
+//boardElement.style.setProperty('--boardSize', sizeNeeded)
+boardElement.style.setProperty('--borderSize', 8/BOARD_SIZE + "vw")
+boardElement.style.setProperty('--fontSize', 60/BOARD_SIZE + "vw")
 minesLeftText.textContent = NUMBER_OF_MINES
 
 function listMinesLeft() {

@@ -66,7 +66,6 @@ export function revealTile(board, tile) {
     } else {
         tile.status = TILE_STATUSES.NUMBER
         const adjacentTiles = nearbyTiles(board, tile)
-        console.log(adjacentTiles)
         const mines = adjacentTiles.filter(t => t.mine)
         if (mines.length === 0) {
             adjacentTiles.forEach(revealTile.bind(null, board))
