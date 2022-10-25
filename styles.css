@@ -6,7 +6,8 @@
   
   body {
     margin: 0;
-    background-color: #444;
+    /*background-color: #444;*/
+    background-image: url('https://images4.alphacoders.com/100/1008904.png');
     display: flex;
     font-size: min(5vw, 3rem);
     flex-direction: column;
@@ -36,6 +37,7 @@
   
   .title {
     margin: 20px;
+    font-size: min(5vw, 3rem);
   }
   
   .subtext {
@@ -80,6 +82,8 @@
     padding: 0px 0.6vw;
     font-size: min(2.5vw, 3rem);
     cursor: pointer;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   /*Different Tile Statuses*/
@@ -107,6 +111,10 @@
 
   @media screen and (max-width: 1197px) {
 
+    .title {
+      font-size: min(10vw, 5rem);
+    }
+
     body, #togglee {
       justify-items: center;
       font-size: min(8vw, 3.5rem);
@@ -114,6 +122,15 @@
 
     div {
       font-size: var(--fontSize);
+    }
+
+    input[type="number"] {
+      width: min(7vw, 50px);
+      height: min(4vw, 30px);
+      font-size: min(1.5vw, 20px);
+      font-family: 'Silkscreen', cursive;
+      background-color: #BBB;
+      border: 0.3vw outset #BBB;
     }
 
     /*.board {
